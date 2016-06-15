@@ -1,6 +1,6 @@
 # synapse
 
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/harthur/synapse?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+This is a fork project of [brain](https://github.com/harthur/brain).
 
 `synapse` is a JavaScript [neural network](http://en.wikipedia.org/wiki/Artificial_neural_network) library. Here's an example of using it to approximate the XOR function:
 
