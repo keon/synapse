@@ -1,16 +1,15 @@
 {
     "name": "synapse",
     "description": "Neural network library",
-    "version": "0.7.0",
-    "author": "Heather Arthur <fayearthur@gmail.com>",
+    "version": "0.1.0",
+    "author": "Keon Kim<kwk236@gmail.com>",
     "repository": {
         "type": "git",
-        "url": "http://github.com/harthur/synapse.git"
+        "url": "http://github.com/keonkim/synapse.git"
     },
     "scripts": {
         "test-unit": "mocha test/unit",
-        "test-cv": "mocha test/cross-validation --timeout 10000",
-        "test": "npm run test-unit && npm run test-cv"
+        "test": "npm run test-unit"
     },
     "main": "./lib/synapse",
     "dependencies": {
