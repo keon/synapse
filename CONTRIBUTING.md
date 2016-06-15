@@ -1,4 +1,4 @@
-Thanks for taking the time to contribute to brain.js. Follow these guidelines to make the process smoother:
+Thanks for taking the time to contribute to synapse.js. Follow these guidelines to make the process smoother:
 
 1. One feature per pull request. Each PR should have one focus, and all the code changes should be supporting that one feature or bug fix. Using a [separate branch](https://guides.github.com/introduction/flow/index.html) for each feature should help you manage developing multiple features at once.
 

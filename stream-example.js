@@ -1,7 +1,7 @@
 var assert = require("assert"),
-    brain = require("./lib/brain");
+    synapse = require("./lib/synapse");
 
-var net = new brain.NeuralNetwork();
+var net = new synapse.NeuralNetwork();
 
 var xor = [
   { input: [0, 0], output: [0]},

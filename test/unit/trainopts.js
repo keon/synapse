@@ -1,5 +1,5 @@
 var assert = require("assert"),
-    brain = require("../../lib/brain");
+    synapse = require("../../lib/synapse");
 
 var data = [{input: [0, 0], output: [0]},
             {input: [0, 1], output: [1]},
@@ -8,7 +8,7 @@ var data = [{input: [0, 0], output: [0]},
 
 describe('train() options', function() {
   it('train until error threshold reached', function() {
-    var net = new brain.NeuralNetwork();
+    var net = new synapse.NeuralNetwork();
     var error = net.train(data, {
       errorThresh: 0.2,
       iterations: 100000
@@ -18,7 +18,7 @@ describe('train() options', function() {
   });
 
   it('train until max iterations reached', function() {
-    var net = new brain.NeuralNetwork();
+    var net = new synapse.NeuralNetwork();
     var stats = net.train(data, {
       errorThresh: 0.001,
       iterations: 1
@@ -34,7 +34,7 @@ describe('train() options', function() {
 
     var calls = 0;
 
-    var net = new brain.NeuralNetwork();
+    var net = new synapse.NeuralNetwork();
     net.train(data, {
       iterations: iters,
       callback: function(stats) {

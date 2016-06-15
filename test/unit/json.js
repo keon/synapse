@@ -1,8 +1,8 @@
 var assert = require("assert"),
-    brain = require("../../lib/brain");
+    synapse = require("../../lib/synapse");
 
 describe('JSON', function() {
-  var net = new brain.NeuralNetwork();
+  var net = new synapse.NeuralNetwork();
 
   net.train([{input:  {"0": Math.random(), b: Math.random()},
               output: {c: Math.random(), "0": Math.random()}},
@@ -10,7 +10,7 @@ describe('JSON', function() {
               output: {c: Math.random(), "0": Math.random()}}]);
 
   var serialized = net.toJSON();
-  var net2 = new brain.NeuralNetwork().fromJSON(serialized);
+  var net2 = new synapse.NeuralNetwork().fromJSON(serialized);
 
   var input = {"0" : Math.random(), b: Math.random()};
 

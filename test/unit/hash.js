@@ -1,9 +1,9 @@
 var assert = require("assert"),
-    brain = require("../../lib/brain");
+    synapse = require("../../lib/synapse");
 
 describe('hash input and output', function() {
   it('runs correctly with array input and output', function() {
-    var net = new brain.NeuralNetwork();
+    var net = new synapse.NeuralNetwork();
 
     net.train([{input: [0, 0], output: [0]},
                {input: [0, 1], output: [1]},
@@ -15,7 +15,7 @@ describe('hash input and output', function() {
   })
 
  it('runs correctly with hash input', function() {
-    var net = new brain.NeuralNetwork();
+    var net = new synapse.NeuralNetwork();
 
     var info = net.train([{input: { x: 0, y: 0 }, output: [0]},
                {input: { x: 0, y: 1 }, output: [1]},
@@ -27,7 +27,7 @@ describe('hash input and output', function() {
   })
 
  it('runs correctly with hash output', function() {
-    var net = new brain.NeuralNetwork();
+    var net = new synapse.NeuralNetwork();
 
     net.train([{input: [0, 0], output: { answer: 0 }},
                {input: [0, 1], output: { answer: 1 }},
@@ -40,7 +40,7 @@ describe('hash input and output', function() {
   })
 
   it('runs correctly with hash input and output', function() {
-    var net = new brain.NeuralNetwork();
+    var net = new synapse.NeuralNetwork();
 
     net.train([{input: { x: 0, y: 0 }, output: { answer: 0 }},
                {input: { x: 0, y: 1 }, output: { answer: 1 }},
@@ -53,7 +53,7 @@ describe('hash input and output', function() {
   })
 
   it('runs correctly with sparse hashes', function() {
-      var net = new brain.NeuralNetwork();
+      var net = new synapse.NeuralNetwork();
 
       net.train([{input: {}, output: {}},
                  {input: { y: 1 }, output: { answer: 1 }},
@@ -67,7 +67,7 @@ describe('hash input and output', function() {
   })
 
   it('runs correctly with unseen input', function() {
-      var net = new brain.NeuralNetwork();
+      var net = new synapse.NeuralNetwork();
 
       net.train([{input: {}, output: {}},
                  {input: { y: 1 }, output: { answer: 1 }},

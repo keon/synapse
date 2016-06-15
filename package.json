@@ -1,18 +1,18 @@
 {
-    "name": "brain",
+    "name": "synapse",
     "description": "Neural network library",
     "version": "0.7.0",
     "author": "Heather Arthur <fayearthur@gmail.com>",
     "repository": {
         "type": "git",
-        "url": "http://github.com/harthur/brain.git"
+        "url": "http://github.com/harthur/synapse.git"
     },
     "scripts": {
         "test-unit": "mocha test/unit",
         "test-cv": "mocha test/cross-validation --timeout 10000",
         "test": "npm run test-unit && npm run test-cv"
     },
-    "main": "./lib/brain",
+    "main": "./lib/synapse",
     "dependencies": {
         "underscore": ">=1.5.1",
         "inherits": "~2.0.1"

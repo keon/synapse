@@ -1,5 +1,5 @@
 var assert = require("assert"),
-    brain = require("../../lib/brain");
+    synapse = require("../../lib/synapse");
 
 function StreamTester(opts) {
   if (!(this instanceof StreamTester)) return new StreamTester(opts);
@@ -13,7 +13,7 @@ function StreamTester(opts) {
   this.fakeBuffer = [];
   this.errorThresh = opts.errorThresh || 0.004;
 
-  this.net = new brain.NeuralNetwork();
+  this.net = new synapse.NeuralNetwork();
 
   this.trainStream = this.net.createTrainStream({
     floodCallback: self.flood.bind(self),

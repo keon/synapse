@@ -1,10 +1,10 @@
 var assert = require("assert"),
-    brain = require("../../lib/brain");
+    synapse = require("../../lib/synapse");
 
 var wiggle = 0.1;
 
 function testBitwise(data, op) {
-  var net = new brain.NeuralNetwork();
+  var net = new synapse.NeuralNetwork();
   net.train(data, { errorThresh: 0.003 });
 
   for(var i in data) {

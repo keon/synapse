@@ -37,7 +37,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', 'build a browser file', function() {
     var done = this.async();
 
-    var outfile = './brain-' + pkg.version + '.js';
+    var outfile = './synapse-' + pkg.version + '.js';
 
     var bundle = browserify('./browser.js').bundle(function(err, src) {
       console.log("> " + outfile);

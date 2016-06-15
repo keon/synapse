@@ -1,10 +1,10 @@
 var assert = require("assert"),
     _ = require("underscore"),
-    brain = require("../../lib/brain");
+    synapse = require("../../lib/synapse");
 
 describe('neural network options', function() {
   it('hiddenLayers', function() {
-    var net = new brain.NeuralNetwork({ hiddenLayers: [8, 7] });
+    var net = new synapse.NeuralNetwork({ hiddenLayers: [8, 7] });
 
     net.train([{input: [0, 0], output: [0]},
                {input: [0, 1], output: [1]},
@@ -19,7 +19,7 @@ describe('neural network options', function() {
   })
 
   it('hiddenLayers default expand to input size', function() {
-    var net = new brain.NeuralNetwork();
+    var net = new synapse.NeuralNetwork();
 
     net.train([{input: [0, 0, 1, 1, 1, 1, 1, 1, 1], output: [0]},
                {input: [0, 1, 1, 1, 1, 1, 1, 1, 1], output: [1]},
@@ -39,10 +39,10 @@ describe('neural network options', function() {
                 {input: [1, 0], output: [1]},
                 {input: [1, 1], output: [1]}];
 
-    var net1 = new brain.NeuralNetwork();
+    var net1 = new synapse.NeuralNetwork();
     var iters1 = net1.train(data, { learningRate: 0.5 }).iterations;
 
-    var net2 = new brain.NeuralNetwork();
+    var net2 = new synapse.NeuralNetwork();
     var iters2 = net2.train(data, { learningRate: 0.8 }).iterations;
 
     assert.ok(iters1 > (iters2 * 1.1), iters1 + " !> " + iters2 * 1.1);
@@ -54,10 +54,10 @@ describe('neural network options', function() {
                 {input: [1, 0], output: [1]},
                 {input: [1, 1], output: [1]}];
 
-    var net1 = new brain.NeuralNetwork({ learningRate: 0.5 });
+    var net1 = new synapse.NeuralNetwork({ learningRate: 0.5 });
     var iters1 = net1.train(data).iterations;
 
-    var net2 = new brain.NeuralNetwork( { learningRate: 0.8 });
+    var net2 = new synapse.NeuralNetwork( { learningRate: 0.8 });
     var iters2 = net2.train(data).iterations;
 
     assert.ok(iters1 > (iters2 * 1.1), iters1 + " !> " + iters2 * 1.1);
@@ -69,10 +69,10 @@ describe('neural network options', function() {
                 {input: [1, 0], output: [1]},
                 {input: [1, 1], output: [1]}];
 
-    var net1 = new brain.NeuralNetwork({ momentum: 0.1 });
+    var net1 = new synapse.NeuralNetwork({ momentum: 0.1 });
     var iters1 = net1.train(data).iterations;
 
-    var net2 = new brain.NeuralNetwork({ momentum: 0.5 });
+    var net2 = new synapse.NeuralNetwork({ momentum: 0.5 });
     var iters2 = net2.train(data).iterations;
 
     assert.ok(iters1 > (iters2 * 1.1), iters1 + " !> " + (iters2 * 1.1));
@@ -90,7 +90,7 @@ describe('neural network options', function() {
     }
 
     function trainWithLog(log) {
-      var net = new brain.NeuralNetwork();
+      var net = new synapse.NeuralNetwork();
       net.train([{input: [0], output: [0]}],
         {
           log: log,
